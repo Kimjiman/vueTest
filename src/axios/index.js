@@ -1,5 +1,6 @@
 import axios from 'axios';
 import router from '@/router';
+
 const instance = axios.create({
     baseURL: import.meta.env.VITE_BASE_URL,
 });
@@ -14,6 +15,7 @@ instance.interceptors.request.use(
     function (config) {
         // 요청 성공 직전 호출됩니다.
         // config.headers['Authorization'] = process.env.VUE_APP_AUTH;
+        config.headers['x-requested-with'] = 'XMLHttpRequest';
         return config;
     },
     function (error) {
@@ -47,7 +49,7 @@ instance.interceptors.response.use(
          * 응답 에러 직전 호출됩니다.
          * .catch() 으로 이어집니다.
          */
-        const status = error.response.status;
+        const status = error.response?.status;
         let data;
         if (401 === status) {
             router.replace({ name: 'login' }).catch(() => {});

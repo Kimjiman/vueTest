@@ -13,7 +13,6 @@ export default defineConfig({
     },
     server: {
         proxy: {
-            // 프록시할 경로 설정
             '/api': {
                 target: 'localhost:8080', // 실제 API 서버 주소
                 changeOrigin: true,
