@@ -1,8 +1,15 @@
 import axios from 'axios';
-import router from '@/routes';
+import router from '@/router';
 const instance = axios.create({
     baseURL: import.meta.env.VITE_BASE_URL,
 });
+
+const AxiosPlugin = {
+    install: (app) => {
+        app.config.globalProperties.$axios = instance;
+    },
+};
+
 instance.interceptors.request.use(
     function (config) {
         // 요청 성공 직전 호출됩니다.
@@ -51,4 +58,5 @@ instance.interceptors.response.use(
         return Promise.reject(data ? data : error);
     },
 );
-export default instance;
+
+export { instance as axios, AxiosPlugin };
