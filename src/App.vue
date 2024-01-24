@@ -15,7 +15,7 @@ import { useGlobalStore } from '@/store';
 const store = useGlobalStore();
 onMounted(() => {
     store.setInitState(true);
-    console.log('initState:', store.getInitState);
+    console.log('Project Loading Success:', store.getInitState);
 });
 </script>
 
