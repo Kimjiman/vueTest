@@ -1,5 +1,7 @@
-<script setup></script>
-
 <template>
-  <div>HOME</div>
+    <div>HOME</div>
 </template>
+
+<script setup>
+import { onMounted, ref } from 'vue';
+</script>

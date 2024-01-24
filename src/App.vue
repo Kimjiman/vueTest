@@ -1,17 +1,22 @@
-<script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import Header from '@/views/layout/Header.vue'
-import Footer from '@/views/layout/Footer.vue'
-</script>
-
 <template>
-  <Header />
-  <main>
-    <RouterView />
-  </main>
-  <Footer />
+    <Header />
+    <main>
+        <RouterView />
+    </main>
+    <Footer />
 </template>
 
-<script setup></script>
+<script setup>
+import { ref, onMounted, computed } from 'vue';
+import Header from '@/views/layout/Header.vue';
+import Footer from '@/views/layout/Footer.vue';
+import { useGlobalStore } from '@/stores';
+
+const store = useGlobalStore();
+onMounted(() => {
+    store.setInitState(true);
+    console.log('initState:', store.getInitState);
+});
+</script>
 
 <style scoped></style>
