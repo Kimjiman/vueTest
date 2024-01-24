@@ -10,7 +10,7 @@
 import { ref, onMounted, computed } from 'vue';
 import Header from '@/views/layout/Header.vue';
 import Footer from '@/views/layout/Footer.vue';
-import { useGlobalStore } from '@/stores';
+import { useGlobalStore } from '@/store';
 
 const store = useGlobalStore();
 onMounted(() => {
