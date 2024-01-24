@@ -7,7 +7,11 @@
 import { onMounted, ref } from 'vue';
 import { login } from '@/axios/user';
 
-const loginAction = () => {
-    login('admin', '1234');
+const loginAction = async () => {
+    try {
+        const res = await login('admin', '1111');
+    } catch (error) {
+        console.error('Error during login:', error);
+    }
 };
 </script>
