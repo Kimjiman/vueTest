@@ -10,8 +10,6 @@ import { axios, AxiosPlugin } from './axios';
 const pinia = createPinia();
 const app = createApp(App);
 
-app.use(pinia);
-app.use(router);
-app.use(AxiosPlugin);
+app.use(pinia).use(router).use(AxiosPlugin);
 
 app.mount('#app'); // app.mount
