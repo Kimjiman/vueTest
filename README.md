@@ -1,29 +1,22 @@
 ## PNPM 권장
 
-```sh
-pnpm install
+```power shell
+iwr https://get.pnpm.io/install.ps1 -useb | iex
 ```
 
-## Project Setup
-
 ```sh
-npm install
+pnpm install
+pnpm i
 ```
 
 ### Compile and Hot-Reload for Development
 
 ```sh
-npm run dev
+pnpm dev
 ```
 
 ### Compile and Minify for Production
 
 ```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
+pnpm run build
 ```
