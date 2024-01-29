@@ -2,7 +2,7 @@
     <h1>Login</h1>
     <div><input type="text" v-model="data.userId" placeholder="아이디" /></div>
     <div><input type="password" v-model="data.password" placeholder="패스워드" /></div>
-    <button @click="loginAction()">로그인테스트</button>
+    <button @click="loginAction()">로그인</button>
 </template>
 
 <script setup>
