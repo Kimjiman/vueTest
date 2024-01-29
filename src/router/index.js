@@ -12,21 +12,19 @@ const router = createRouter({
         {
             path: '/',
             name: 'home',
-            component: () => import('@/views/HomeView.vue'),
+            component: () => import('@/views/Home.vue'),
         },
         {
             path: '/about',
             name: 'about',
-            component: () => import('@/views/AboutView.vue'),
+            component: () => import('@/views/About.vue'),
         },
-        ...userRouter.map((route) => ({ ...route, path: `/user/${route.path}` })),
+        ...userRouter.map(route => ({ ...route, path: `/user/${route.path}` })),
     ],
 });
 
 const onBeforeEach = async (to, from, next) => {
-    console.log(router.getRoutes());
     const user = store.getUser;
-
     return next();
 };
 

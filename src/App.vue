@@ -1,13 +1,13 @@
 <template>
     <Header />
-    <main>
+    <main class="contents">
         <RouterView />
     </main>
     <Footer />
 </template>
 
 <script setup>
-import { ref, onMounted, computed } from 'vue';
+import { onMounted } from 'vue';
 import Header from '@/views/layout/Header.vue';
 import Footer from '@/views/layout/Footer.vue';
 import { useGlobalStore } from '@/store';
@@ -15,7 +15,7 @@ import { useGlobalStore } from '@/store';
 const store = useGlobalStore();
 onMounted(() => {
     store.setInitState(true);
-    console.log('Project Loading Success:', store.getInitState);
+    console.log('Project Loading Status:', store.getInitState);
 });
 </script>
 

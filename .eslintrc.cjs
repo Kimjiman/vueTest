@@ -7,12 +7,6 @@ module.exports = {
     parserOptions: {
         ecmaVersion: 'latest',
     },
-    'vue/multi-word-component-names': [
-        'error',
-        {
-            ignores: ['default'],
-        },
-    ],
     rules: {
         'no-unused-vars': 'warn', // 쓰지 않는 변수 사용시
         'vue/no-unused-vars': 'warn', // 쓰지 않는 변수 사용시

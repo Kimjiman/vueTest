@@ -2,9 +2,7 @@ import { defineStore } from 'pinia';
 
 export const useGlobalStore = defineStore('global', {
     state: () => ({
-        user: {
-            id: 'test',
-        },
+        user: {},
         initState: false,
     }),
 

@@ -1,6 +1,6 @@
 <template>
     <div class="footer">
-        <h1>Footer</h1>
+        <h1 class="title">Footer</h1>
     </div>
 </template>
 <style scoped></style>

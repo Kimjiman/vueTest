@@ -1,4 +1,26 @@
 .link {
-  display: inline-block;
-  padding: 5px 10px 5px 10px;
+    display: inline-block;
+    padding: 5px 10px 5px 0px;
+}
+
+.header {
+    background-color: blanchedalmond;
+    height: 100px;
+}
+
+.header .title {
+    text-align: center;
+}
+
+.footer {
+    background-color: aqua;
+    height: 100px;
+}
+
+.footer .title {
+    text-align: center;
+}
+
+.contents {
+    height: 750px;
 }
