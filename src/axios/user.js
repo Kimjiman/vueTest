@@ -1,13 +1,14 @@
 import { axios } from './index';
 
-export const login = async (loginId, password) => {
-    const res = await axios.post(
-        '/loginProc',
-        {
+const userApi = {
+    login: async (loginId, password) => {
+        const data = {
             loginId: loginId,
             password: password,
-        },
-        { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } },
-    );
-    return res;
+        };
+        const headers = { 'Content-Type': 'application/x-www-form-urlencoded' };
+        return await axios.post('/loginProc', data, { headers: headers });
+    },
 };
+
+export default userApi;
