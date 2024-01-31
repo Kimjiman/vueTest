@@ -1,9 +1,9 @@
 <template>
     <h1>Chart</h1>
     <div>
-        <button @click="changeChart('pie')">파이</button>
-        <button @click="changeChart('bar')">바</button>
-        <button @click="changeChart('line')">라인</button>
+        <button @click="changeChart('pie')" class="chartBtn">파이</button>
+        <button @click="changeChart('bar')" class="chartBtn">바</button>
+        <button @click="changeChart('line')" class="chartBtn">라인</button>
     </div>
     <v-chart class="chart" :option="option" autoresize v-if="data.chart === 'pie'" />
     <v-chart class="chart" :option="option2" autoresize v-if="data.chart === 'bar'" />
@@ -122,3 +122,9 @@ const changeChart = async kind => {
     data.chart = kind;
 };
 </script>
+
+<style scoped>
+.chartBtn {
+    margin-right: 10px;
+}
+</style>
