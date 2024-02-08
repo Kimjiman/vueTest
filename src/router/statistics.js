@@ -1,5 +1,5 @@
 // 통계 라우터
-const userRouter = [
+const routes = [
     {
         path: 'chart',
         name: 'chart',
@@ -7,4 +7,4 @@ const userRouter = [
     },
 ];
 
-export default userRouter;
+export default routes;

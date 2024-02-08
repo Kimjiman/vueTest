@@ -1,5 +1,5 @@
 // 회원 관련 라우터
-const userRouter = [
+const routes = [
     {
         path: 'login',
         name: 'login',
@@ -7,4 +7,4 @@ const userRouter = [
     },
 ];
 
-export default userRouter;
+export default routes;

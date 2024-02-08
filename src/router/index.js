@@ -20,17 +20,24 @@ const router = createRouter({
             name: 'about',
             component: () => import('@/views/About.vue'),
         },
-        ...userRouter.map(route => ({ ...route, path: `/user/${route.path}` })),
-        ...statisticsRouter.map(route => ({ ...route, path: `/statistics/${route.path}` })),
+        {
+            path: '/user',
+            children: [...userRouter],
+        },
+        {
+            path: '/statistics',
+            children: [...statisticsRouter],
+        },
     ],
 });
 
-// 전역가드로 user권한체크
+// 전역가드 Before
 const onBeforeEach = async (to, from, next) => {
-    const user = store.getUser;
+    const user = store.getUser; // before Checked User
     return next();
 };
 
+// 전역 가드 After
 const onAfterEach = async (to, from) => {};
 
 router.beforeEach(onBeforeEach);

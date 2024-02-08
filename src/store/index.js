@@ -2,25 +2,32 @@ import { defineStore } from 'pinia';
 
 export const useGlobalStore = defineStore('global', {
     state: () => ({
-        user: {},
         initState: false,
+        user: {},
+        menu: {},
     }),
 
     getters: {
-        getUser() {
-            return this.user;
-        },
         getInitState() {
             return this.initState;
+        },
+        getUser() {
+            return this.user || {};
+        },
+        getMenu() {
+            return this.menu || {};
         },
     },
 
     actions: {
+        setInitState(value) {
+            this.initState = value;
+        },
         setUser(value) {
             this.user = value;
         },
-        setInitState(value) {
-            this.initState = value;
+        setMenu(value) {
+            this.menu = value;
         },
     },
 });

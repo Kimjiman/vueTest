@@ -5,8 +5,8 @@ const instance = axios.create({
     baseURL: import.meta.env.VITE_BASE_URL,
 });
 
-const AxiosPlugin = {
-    install: (app) => {
+const axiosPlugin = {
+    install: app => {
         app.config.globalProperties.$axios = instance;
     },
 };
@@ -48,4 +48,4 @@ instance.interceptors.response.use(
     },
 );
 
-export { instance as axios, AxiosPlugin };
+export { instance as axios, axiosPlugin };

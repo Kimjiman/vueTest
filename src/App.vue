@@ -13,9 +13,9 @@ import Footer from '@/views/layout/Footer.vue';
 import { useGlobalStore } from '@/store';
 
 const store = useGlobalStore();
-onMounted(() => {
+
+onMounted(async () => {
     store.setInitState(true);
-    console.log('Project Loading Status:', store.getInitState);
 });
 </script>
 
