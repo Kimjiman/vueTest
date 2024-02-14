@@ -1,6 +1,6 @@
 import { createPinia } from 'pinia';
-import router from './router';
-import { axiosPlugin } from './axios';
+import router from '@/router';
+import { axiosPlugin } from '@/axios';
 
 const pinia = createPinia();
 

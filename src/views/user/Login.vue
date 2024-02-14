@@ -8,6 +8,10 @@
 <script setup>
 import { reactive } from 'vue';
 import userApi from '@/axios/user';
+import { useGlobalStore } from '@/store';
+import stringUtils from '@/utils/stringUtils';
+
+const store = useGlobalStore();
 
 const data = reactive({
     loginId: null,
@@ -15,17 +19,18 @@ const data = reactive({
 });
 
 const login = async () => {
-    if (!data.loginId || data.loginId.trim() === '') {
+    if (stringUtils.isEmpty(data.loginId)) {
         return alert('아이디를 입력해주세요.');
     }
 
-    if (!data.password || data.password.trim() === '') {
+    if (stringUtils.isEmpty(data.password)) {
         return alert('비밀번호를 입력해주세요.');
     }
 
     try {
         const res = await userApi.login(data.loginId, data.password);
         console.log(res);
+        // store.setUser(res);
     } catch (error) {
         console.error('login Error:', error);
     }
