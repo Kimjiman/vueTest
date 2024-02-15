@@ -1,6 +1,6 @@
 <template>
-    <div class="footer">
+    <el-footer class="footer">
         <h1 class="title">Footer</h1>
-    </div>
+    </el-footer>
 </template>
 <style scoped></style>

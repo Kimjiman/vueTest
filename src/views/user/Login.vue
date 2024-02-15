@@ -1,8 +1,14 @@
 <template>
     <h1>Login</h1>
-    <div><el-input type="text" v-model="data.loginId" placeholder="아이디" /></div>
-    <div><el-input type="password" v-model="data.password" placeholder="패스워드" /></div>
-    <el-button @click="login()" type="primary">로그인</el-button>
+    {{ data.user }}
+    <div>
+        <div><el-input type="text" v-model="data.loginId" placeholder="아이디" /></div>
+        <div><el-input type="password" v-model="data.password" placeholder="패스워드" /></div>
+        <el-button @click="login()" type="primary">로그인</el-button>
+    </div>
+    <div v-isLogin>
+        <el-button @click="logout()" type="primary">로그아웃</el-button>
+    </div>
 </template>
 
 <script setup>
@@ -30,10 +36,14 @@ const login = async () => {
 
     try {
         const res = await userApi.login(data.loginId, data.password);
-        console.log(res);
-        // store.setUser(res);
-    } catch (error) {
-        console.error('login Error:', error);
+        store.setUser(res.response);
+        store.setIsLogin(true);
+    } catch (ex) {
+        return ElMessage({ message: ex.message, type: 'error' });
     }
+};
+
+const logout = async () => {
+    store.setUser(null);
 };
 </script>

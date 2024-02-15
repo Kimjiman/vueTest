@@ -13,7 +13,6 @@ const axiosPlugin = {
 
 instance.interceptors.request.use(
     function (config) {
-        config.headers['x-requested-with'] = 'XMLHttpRequest';
         return config;
     },
     function (error) {

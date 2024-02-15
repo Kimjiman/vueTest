@@ -5,7 +5,6 @@
 
 .header {
     background-color: blanchedalmond;
-    height: 100px;
 }
 
 .header .title {
@@ -14,7 +13,6 @@
 
 .footer {
     background-color: aqua;
-    height: 100px;
 }
 
 .footer .title {
@@ -22,5 +20,5 @@
 }
 
 .contents {
-    height: 750px;
+    min-height: 700px;
 }

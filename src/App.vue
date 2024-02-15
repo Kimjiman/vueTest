@@ -1,13 +1,13 @@
 <template>
     <Header />
-    <main class="contents">
+    <el-main class="contents">
         <RouterView />
-    </main>
+    </el-main>
     <Footer />
 </template>
 
 <script setup>
-import { onMounted } from 'vue';
+import { onMounted, watch } from 'vue';
 import Header from '@/views/layout/Header.vue';
 import Footer from '@/views/layout/Footer.vue';
 import { useGlobalStore } from '@/store';

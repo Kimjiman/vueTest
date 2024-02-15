@@ -1,15 +1,15 @@
 <template>
-    <div class="header">
+    <el-header class="header">
         <h1 class="title">Header</h1>
         <span class="link" v-for="it in routes" :key="it.name">
             <router-link :to="it.path">{{ it.name.toUpperCase() }}</router-link>
         </span>
-    </div>
+    </el-header>
 </template>
 
 <script setup>
 import router from '@/router/index';
-import { onMounted, ref } from 'vue';
+import { ref } from 'vue';
 
 const routes = ref(router.getRoutes());
 </script>
