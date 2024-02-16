@@ -36,7 +36,7 @@ const login = async () => {
 
     try {
         const res = await userApi.login(data.loginId, data.password);
-        store.setUser(res.response);
+        store.setUser(res);
         store.setIsLogin(true);
     } catch (ex) {
         return ElMessage({ message: ex.message, type: 'error' });
